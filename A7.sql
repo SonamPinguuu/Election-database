@@ -1,6 +1,6 @@
  
  
- --Q3
+ 
   select given_names,surname,district_name
   from candidate natural join province_territory natural join electorial_district natural join political_party
   where party_name = 'Green Party' and province_territory_name = ' New Brunswick ';
@@ -8,23 +8,23 @@
    
   insert into candidate values(205,13005,1004,'Chophel','Sonam');
   insert into candidate values(206,13009,1004,'Jones','Anderson');
-  --Q4
+  
   select district_name
   from electorial_district natural join province_territory
   where province_territory_name = ' New Brunswick ';
   
   insert into registered_voter values(6,13003,'Anik','Jhon','878 Kitchen Street',2000-05-12, 13003029,NULL);
-  --Q5
+  
   select location_name,voter_surname,voter_given_names,address
   from registered_voter natural join polling_location 
   where location_name = 'Geary Lion''s club' and flag is null;
   
-  --Q6 1
+  
   
   select district_name as District,location_id,location_name as Location
   from registered_voter natural join polling_location natural join electorial_district natural join vote_tally
   where final_count>=1;
-  --Q6 2
+  
   select distinct district_name as District,location_id,location_name as Location
   from registered_voter natural join polling_location natural join electorial_district natural join vote_tally
   where final_count>=1;
@@ -33,7 +33,7 @@
     insert into registered_voter values(8,13003,'Uzumaki','Naruto','609 Kitchen Street',2000-05-12, 13003029,1);
 	insert into registered_voter values(9,13003,'Tony','Ferguson','456 pine Street',1991-09-01,13003001,1);
 	
-	--Q7
+	
 insert into vote_tally values(13003001, 7397, 575);
 insert into vote_tally values(13003002, 7397, 548);
 insert into vote_tally values(13003003, 7397, 572);
@@ -244,7 +244,7 @@ insert into vote_tally values(13003027, 7403, 12);
 insert into vote_tally values(13003028, 7403, 11);
 insert into vote_tally values(13003029, 7403, 3);
 insert into vote_tally values(13003030, 7403, 0);
-sele
+
 
 -----------------------------------------------------------------------------------------
 
@@ -260,7 +260,7 @@ insert into candidate values (7403,13003,1000,'Smith','Jen');
  from vote_tally natural join polling_location natural join electorial_district natural join candidate natural join political_party 
  where party_name = 'Liberal' and district_name = 'Fredericton';
  
- --Q8
+
  
  select location_name as Location,surname as Candidate,final_count as Votes
  from candidate natural join polling_location natural join vote_tally
