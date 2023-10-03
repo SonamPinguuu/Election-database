@@ -1,4 +1,6 @@
---Part A---------------------------------------------------------------------
+--Procedures
+
+
 
 drop procedure if exists voteTotals;
 delimiter $$
@@ -21,7 +23,6 @@ end$$
 
 delimiter ;
 
---part B----------------------
 drop procedure if exists removeRejected;
 delimiter $$
 create procedure removeRejected(pollingLId int, candidateId int, quantityRejected int)
@@ -67,7 +68,7 @@ end if;
 end $$
 delimiter ; 
 
----Test 1---
+--Test
 
  select location_id,candidate_id,rejected_count,final_count
      from vote_tally natural join polling_location
@@ -114,7 +115,7 @@ set final_count = 519
 where location_id = 13003002
 and candidate_id = 7398;
 
---part C------------------------------------------------------------------------
+
 drop procedure if exists changeParty;
 delimiter $$
 create procedure changeParty(candidateId int, newparty varchar(50))
