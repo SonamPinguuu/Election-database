@@ -1,7 +1,7 @@
 --Procedures
 
 
-
+--This procedure calculates the total votes of every candidate from a given district
 drop procedure if exists voteTotals;
 delimiter $$
 create procedure voteTotals(districtID int)
@@ -23,6 +23,7 @@ end$$
 
 delimiter ;
 
+--This procedure
 drop procedure if exists removeRejected;
 delimiter $$
 create procedure removeRejected(pollingLId int, candidateId int, quantityRejected int)
