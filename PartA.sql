@@ -23,7 +23,7 @@ end$$
 
 delimiter ;
 
---This procedure
+--This procedure removes the rejected votes for a candidate in a polling location
 drop procedure if exists removeRejected;
 delimiter $$
 create procedure removeRejected(pollingLId int, candidateId int, quantityRejected int)
@@ -117,6 +117,7 @@ where location_id = 13003002
 and candidate_id = 7398;
 
 
+--This procedure changes a candidates party.
 drop procedure if exists changeParty;
 delimiter $$
 create procedure changeParty(candidateId int, newparty varchar(50))
